@@ -1,4 +1,4 @@
-<style>
+
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -528,4 +528,3 @@
             .social-link { width: 40px; height: 40px; font-size: 1rem; }
             .stats { grid-template-columns: 1fr; }
         }
-    </style>
