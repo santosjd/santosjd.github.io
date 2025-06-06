@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Santos - Emprendedor Digital | Estudiante & Creador de Contenido</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jose Santos - Joven emprendedor ecuatoriano, estudiante de Administración y creador de contenido digital con 19K suscriptores en YouTube. Buscando primera oportunidad laboral.">
+    <meta name="keywords" content="Jose Santos, emprendedor, Ecuador, YouTube, creador contenido, administración, marketing digital, Guayaquil">
+    <meta name="author" content="Jose Santos">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jose Santos - Emprendedor Digital">
+    <meta property="og:description" content="Joven emprendedor con 19K suscriptores en YouTube buscando su primera oportunidad laboral.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.25);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.5; }
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            animation: bounce 2s ease-out;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            animation: slideInRight 1s ease-out 0.4s both;
+        }
+        
+        .header .tagline {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .social-link:hover::before {
+            transform: scale(1.2);
+        }
+        
+        .social-link.youtube { background: #ff0000; }
+        .social-link.linkedin { background: #0077b5; }
+        .social-link.instagram { background: var(--gradient-2); }
+        .social-link.email { background: var(--success); }
+        .social-link.whatsapp { background: #25d366; }
+        
+        /* Main Content */
+        .content {
+            display: grid;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        /* Glass Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out both;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .card-title i {
+            font-size: 1.8rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* About Section */
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+        
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: default;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+        }
+        
+        .contact-value {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            margin: 2rem auto;
+            display: block;
+            width: fit-content;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-2);
+        }
+        
+        .cta-button i {
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+            40%, 43% { transform: translate3d(0, -30px, 0); }
+            70% { transform: translate3d(0, -15px, 0); }
+            90% { transform: translate3d(0, -4px, 0); }
+        }
+        
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .header h1 { font-size: 2.5rem; }
+            .header .subtitle { font-size: 1rem; }
+            .social-links { gap: 0.8rem; }
+            .social-link { width: 45px; height: 45px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .glass-card { padding: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 { font-size: 2rem; }
+            .profile-image { width: 120px; height: 120px; }
+            .social-link { width: 40px; height: 40px; font-size: 1rem; }
+            .stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Jose Santos" class="profile-image">
+            <h1>Jose Santos</h1>
+            <p class="subtitle">Emprendedor Digital | Estudiante de Administración | Creador de Contenido</p>
+            <p class="tagline">"No espero a que las oportunidades lleguen: las creo"</p>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://youtube.com/@josesantos" class="social-link youtube" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/in/josesantos" class="social-link linkedin" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/josesantos" class="social-link instagram" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:jose.santos@email.com" class="social-link email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/593991234567" class="social-link whatsapp" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="content">
+            <!-- About Section -->
+            <section class="glass-card scroll-animate">
+                <h2 class="card-title">
+                    <i class="fas fa-user-astronaut"></i>
+                    Mi Historia
+                </h2>
+                <div class="about-text">
+                    <p>Soy un <strong>joven emprendedor</strong> con hambre de impacto real. Vine a Ecuador siendo tan solo un niño, invisible para muchos. Hoy me siento parte de este país que me formó y quiero devolverle algo bueno: <strong>trabajo serio, ideas frescas</strong> y el ejemplo de que con disciplina y determinación se puede.</p>
+                    
+                    <p>Como <strong>estudiante de Administración</strong> y emprendedor en formación, me considero un aprendiz permanente, en busca constante de nuevas experiencias y oportunidades alineadas con mis metas y valores. Busco mi <strong>primera oportunidad laboral formal</strong> para seguir aprendiendo y aportar con responsabilidad y compromiso.</p>
+                    
+                    <p>Desde pequeño, me fascinaba todo lo que las computadoras e internet podían llegar a lograr. Todavía hoy sigo experimentando y descubriendo nuevas formas creativas de usar la tecnología de manera proactiva y consciente para impulsar mi productividad, optimizar mi vida y también <strong>aportar al desarrollo de mi país</strong>.</p>
+                </div>
+                
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">19K</span>
+                        <span class="stat-label">Suscriptores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3M+</span>
+                        <span class="stat-label">Visualizaciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Videos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Años Online</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section class="glass-card scroll-animate">
+                <h2 class="card-title">
+                    <i class="fas fa-rocket"></i>
+                    Habilidades & Herramientas
+                </h2>
+                <div class="skills">
+                    <span class="skill-tag">Creación de Contenido</span>
+                    <span class="skill-tag">Marketing Digital</span>
+                    <span class="skill-tag">YouTube Strategy</span>
+                    <span class="skill-tag">Edición de Video</span>
+                    <span class="skill-tag">WordPress</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Hosting Web</span>
+                    <span class="skill-tag">Administración</span>
+                    <span class="skill-tag">Emprendimiento</span>
+                    <span class="skill-tag">Productividad</span>
+                    <span class="skill-tag">Tecnología</span>
+                    <span class="skill-tag">Innovación</span>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section class="glass-card scroll-animate">
+                <h2 class="card-title">
+                    <i class="fas fa-briefcase"></i>
+                    Proyectos Destacados
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon" style="background: var(--gradient-2);">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3 class="project-title">Canal de YouTube</h3>
+                        <p class="project-desc">Canal con 19K suscriptores y más de 3 millones de visualizaciones. Más de 500 videos aplicando estrategias de crecimiento y optimización.</p>
+                        <a href="https://youtube.com/@josesantos" class="project-link" target="_blank" rel="noopener">
+                            Ver Canal <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon" style="background: var(--gradient-3);">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="project-title">Medicina Explicada</h3>
+                        <p class="project-desc">Plataforma digital con base científica enfocada en promover la salud entre los jóvenes. Desarrollo web, WordPress y SEO.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon" style="background: var(--gradient-1);">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="project-title">Proyectos Libres</h3>
+                        <p class="project-desc">Colaboración en diversos proyectos sin fines de lucro aplicando conocimientos en tecnología y marketing digital.</p>
+                        <a href="#contacto" class="project-link">
+                            Colaborar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contacto" class="glass-card scroll-animate">
+                <h2 class="card-title">
+                    <i class="fas fa-paper-plane"></i>
+                    ¿Hablamos?
+                </h2>
+                <p class="about-text">
+                    Estoy buscando mi primera oportunidad laboral formal donde pueda aportar mi energía, creatividad y ganas de aprender. Si tienes un proyecto interesante o una oportunidad que pueda ser el siguiente paso en mi carrera, me encantaría conocerte.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: var(--success);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">jose.santos@email.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: #25d366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">+593 99 123 4567</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: var(--primary);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Ubicación</span>
+                            <span class="contact-value">Guayaquil, Ecuador</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: var(--secondary);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Disponibilidad</span>
+                            <span class="contact-value">Inmediata</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="mailto:jose.santos@email.com?subject=Oportunidad%20Laboral&body=Hola%20Jose,%20me%20interesa%20conocer%20más%20sobre%20tu%20perfil..." class="cta-button">
+                    <i class="fas fa-rocket"></i>
+                    ¡Contáctame Ya!
+                </a>
+            </section>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 15;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 3px and 8px
+                const size = Math.random() * 5 + 3;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.scroll-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        function handleSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Mouse move effect for cards
+        function handleMouseEffects() {
+            const cards = document.querySelectorAll('.glass-card, .project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+        
+        // Typing effect for tagline
+        function typeWriter() {
+            const text = "No espero a que las oportunidades lleguen: las creo";
+            const tagline = document.querySelector('.tagline');
+            let i = 0;
+            
+            tagline.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    tagline.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 50);
+                } else {
+                    // Add blinking cursor
+                    tagline.innerHTML += '<span class="cursor">|</span>';
+                    
+                    // Add cursor animation
+                    const cursor = tagline.querySelector('.cursor');
+                    if (cursor) {
+                        cursor.style.animation = 'blink 1s infinite';
+                    }
+                }
+            }
+            
+            // Start typing after a delay
+            setTimeout(type, 2000);
+        }
+        
+        // Add cursor blink animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = counter.textContent;
+                        const isK = target.includes('K');
+                        const isM = target.includes('M');
+                        const isPlus = target.includes('+');
+                        
+                        let numericTarget = parseInt(target.replace(/[KM+]/g, ''));
+                        if (isK) numericTarget *= 1000;
+                        if (isM) numericTarget *= 1000000;
+                        
+                        let current = 0;
+                        const increment = numericTarget / 100;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= numericTarget) {
+                                current = numericTarget;
+                                clearInterval(timer);
+                            }
+                            
+                            let displayValue = Math.floor(current);
+                            if (isM) {
+                                displayValue = (displayValue / 1000000).toFixed(1) + 'M';
+                            } else if (isK) {
+                                displayValue = (displayValue / 1000).toFixed(0) + 'K';
+                            }
+                            
+                            counter.textContent = displayValue + (isPlus ? '+' : '');
+                        }, 20);
+                        
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        
+        // Initialize parallax effect
+        function handleParallax() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const particles = document.querySelectorAll('.particle');
+                
+                particles.forEach((particle, index) => {
+                    const speed = 0.5 + (index % 3) * 0.2;
+                    particle.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        }
+        
+        // Add loading animation
+        function showLoadingAnimation() {
+            document.body.style.opacity = '0';
+            
+            window.addEventListener('load', () => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            });
+        }
+        
+        // Theme toggle functionality (future enhancement)
+        function setupThemeToggle() {
+            // Add theme toggle button
+            const themeToggle = document.createElement('button');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            themeToggle.className = 'theme-toggle';
+            themeToggle.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                background: var(--glass);
+                backdrop-filter: blur(20px);
+                color: var(--primary);
+                font-size: 1.2rem;
+                cursor: pointer;
+                z-index: 1000;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            document.body.appendChild(themeToggle);
+            
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                const icon = themeToggle.querySelector('i');
+                icon.className = document.body.classList.contains('dark-theme') 
+                    ? 'fas fa-sun' 
+                    : 'fas fa-moon';
+            });
+        }
+        
+        // Initialize all functions
+        function init() {
+            showLoadingAnimation();
+            createParticles();
+            handleScrollAnimations();
+            handleSmoothScrolling();
+            handleMouseEffects();
+            typeWriter();
+            animateCounters();
+            handleParallax();
+            setupThemeToggle();
+        }
+        
+        // Start everything when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+        
+        // Performance optimization
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateAnimations);
+                ticking = true;
+            }
+        }
+        
+        function updateAnimations() {
+            // Update any continuous animations here
+            ticking = false;
+        }
+        
+        // Intersection Observer for performance
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        // Add resize handler for responsive adjustments
+        window.addEventListener('resize', () => {
+            // Recalculate particle positions if needed
+            if (window.innerWidth < 768) {
+                document.querySelectorAll('.particle').forEach(particle => {
+                    particle.style.display = 'none';
+                });
+            } else {
+                document.querySelectorAll('.particle').forEach(particle => {
+                    particle.style.display = 'block';
+                });
+            }
+        });
+        
+        // Add error handling
+        window.addEventListener('error', (e) => {
+            console.log('Error handled gracefully:', e.message);
+        });
+        
+        // Service Worker registration (for future PWA features)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Future service worker registration
+            });
+        }
+    </script>
+</body>
+</html>
