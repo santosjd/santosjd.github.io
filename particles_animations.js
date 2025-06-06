@@ -1,5 +1,4 @@
 // JavaScript
-    <script>
         // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
@@ -260,4 +259,3 @@
                 // Future service worker registration
             });
         }
-    </script>
