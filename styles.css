@@ -117,6 +117,85 @@
             }
         }
 
+        /* Mobile Main Header */
+        .main-header__menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2001;
+        }
+        .main-header__menu-btn span {
+            width: 28px;
+            height: 3px;
+            margin: 4px 0;
+            background: var(--primary);
+            border-radius: 2px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        /* Menú móvil oculto por defecto */
+        .main-header__mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70vw;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            box-shadow: -2px 0 20px rgba(0,0,0,0.10);
+            padding: 3.5rem 2rem 2rem 2rem;
+            flex-direction: column;
+            gap: 2rem;
+            z-index: 2000;
+            transition: transform 0.3s;
+            transform: translateX(100%);
+        }
+
+        .main-header__mobile-menu.open {
+            display: flex;
+            transform: translateX(0);
+        }
+
+        .main-header__mobile-link {
+            font-family: 'Inter Tight', 'Inter', Arial, sans-serif;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 1rem 0;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+        }
+        .main-header__mobile-link:hover {
+            background: var(--gradient-1);
+            color: #fff;
+        }
+
+        /* Oculta nav normal y muestra hamburguesa en móvil */
+        @media (max-width: 700px) {
+            .main-header__nav {
+                display: none;
+            }
+            .main-header__menu-btn {
+                display: flex;
+            }
+            .main-header__container {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.6rem 0.7rem;
+            }
+        }
+
         /* Header */
         .header {
             text-align: center;
