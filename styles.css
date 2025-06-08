@@ -29,7 +29,7 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter Tight', 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--bg-primary);
@@ -496,7 +496,7 @@
             background: transparent; /* Fondo invisible */
             color: var(--text-light); /* Color suave y acorde a tu paleta */
             text-align: center;
-            font-family: 'Inter Tight', 'Inter', Arial, sans-serif;
+            font-family: 'Inter Tight', 'Inter', sans-serif;
             font-size: 0.98rem;
             letter-spacing: 0.02em;
             border-top: 1px solid rgba(100,116,139,0.12); /* Línea sutil de separación */
