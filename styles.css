@@ -26,6 +26,7 @@
         
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 3.2rem; /* O ajusta a 3.5rem o 4rem si lo prefieres */
         }
         
         body {
@@ -102,11 +103,6 @@
         .main-header__link:focus {
             color: var(--primary);
             background: rgba(99,102,241,0.07);
-        }
-
-        /* Para que el contenido no quede tapado por el header sticky */
-        body {
-            scroll-padding-top: 56px; /* Ajusta este valor si cambias la altura del header */
         }
 
         @media (max-width: 700px) {
