@@ -1,33 +1,4 @@
 // JavaScript
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const numberOfParticles = 15;
-            
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random size between 3px and 8px
-                const size = Math.random() * 5 + 3;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
-                // Random position
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                
-                // Random animation delay
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                
-                // Random opacity
-                particle.style.opacity = Math.random() * 0.5 + 0.3;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
         // Scroll animations
         function handleScrollAnimations() {
             const elements = document.querySelectorAll('.scroll-animate');
@@ -170,20 +141,7 @@
             
             counters.forEach(counter => observer.observe(counter));
         }
-        
-        // Initialize parallax effect
-        function handleParallax() {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const particles = document.querySelectorAll('.particle');
-                
-                particles.forEach((particle, index) => {
-                    const speed = 0.5 + (index % 3) * 0.2;
-                    particle.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-        }
-        
+            
         // Add loading animation
         function showLoadingAnimation() {
             document.body.style.opacity = '0';
@@ -197,13 +155,11 @@
         // Initialize all functions
         function init() {
             showLoadingAnimation();
-            createParticles();
             handleScrollAnimations();
             handleSmoothScrolling();
             handleMouseEffects();
             typeWriter();
             animateCounters();
-            handleParallax();
         }
         
         // Start everything when DOM is loaded
@@ -233,20 +189,6 @@
             rootMargin: '0px',
             threshold: 0.1
         };
-        
-        // Add resize handler for responsive adjustments
-        window.addEventListener('resize', () => {
-            // Recalculate particle positions if needed
-            if (window.innerWidth < 768) {
-                document.querySelectorAll('.particle').forEach(particle => {
-                    particle.style.display = 'none';
-                });
-            } else {
-                document.querySelectorAll('.particle').forEach(particle => {
-                    particle.style.display = 'block';
-                });
-            }
-        });
         
         // Add error handling
         window.addEventListener('error', (e) => {
