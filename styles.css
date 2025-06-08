@@ -487,3 +487,23 @@
             .social-link { width: 40px; height: 40px; font-size: 1rem; }
             .stats { grid-template-columns: 1fr; }
         }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            padding: 1rem 0;
+            background: #222; /* Fondo oscuro moderno */
+            color: #bbb;      /* Texto gris suave */
+            text-align: center;
+            position: fixed;  /* Siempre visible abajo */
+            left: 0;
+            bottom: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .footer small {
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+        }
