@@ -201,3 +201,26 @@
                 // Future service worker registration
             });
         }
+
+        // Mobile Main Header Menu
+        const menuBtn = document.querySelector('.main-header__menu-btn');
+        const mobileMenu = document.querySelector('.main-header__mobile-menu');
+        const mobileLinks = document.querySelectorAll('.main-header__mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Cierra el menú al hacer click en un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Opcional: Cierra el menú al hacer click fuera del menú
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        });
