@@ -78,7 +78,7 @@
             justify-content: space-between;
         }
         .main-header__title {
-            font-family: 'Inter Tight', 'Inter', Arial, sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             font-size: 1.15rem;
             color: var(--primary);
