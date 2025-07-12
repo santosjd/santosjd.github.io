@@ -1,39 +1,4 @@
 // JavaScript
-        // Scroll animations
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.scroll-animate');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            elements.forEach(element => {
-                observer.observe(element);
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        function handleSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-        
         // Mouse move effect for cards
         function handleMouseEffects() {
             const cards = document.querySelectorAll('.glass-card, .project-card');
@@ -58,22 +23,9 @@
                 });
             });
         }
-            
-        // Add loading animation
-        function showLoadingAnimation() {
-            document.body.style.opacity = '0';
-            
-            window.addEventListener('load', () => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            });
-        }
         
         // Initialize all functions
         function init() {
-            showLoadingAnimation();
-            handleScrollAnimations();
-            handleSmoothScrolling();
             handleMouseEffects();
         }
         
