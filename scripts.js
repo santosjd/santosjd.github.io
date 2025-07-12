@@ -58,89 +58,6 @@
                 });
             });
         }
-        
-        // Typing effect for tagline
-        function typeWriter() {
-            const text = "No espero a que las oportunidades lleguen: las creo";
-            const tagline = document.querySelector('.tagline');
-            let i = 0;
-            
-            tagline.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    tagline.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, 50);
-                } else {
-                    // Add blinking cursor
-                    tagline.innerHTML += '<span class="cursor">|</span>';
-                    
-                    // Add cursor animation
-                    const cursor = tagline.querySelector('.cursor');
-                    if (cursor) {
-                        cursor.style.animation = 'blink 1s infinite';
-                    }
-                }
-            }
-            
-            // Start typing after a delay
-            setTimeout(type, 2000);
-        }
-        
-        // Add cursor blink animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = counter.textContent;
-                        const isK = target.includes('K');
-                        const isM = target.includes('M');
-                        const isPlus = target.includes('+');
-                        
-                        let numericTarget = parseInt(target.replace(/[KM+]/g, ''));
-                        if (isK) numericTarget *= 1000;
-                        if (isM) numericTarget *= 1000000;
-                        
-                        let current = 0;
-                        const increment = numericTarget / 100;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= numericTarget) {
-                                current = numericTarget;
-                                clearInterval(timer);
-                            }
-                            
-                            let displayValue = Math.floor(current);
-                            if (isM) {
-                                displayValue = (displayValue / 1000000).toFixed(1) + 'M';
-                            } else if (isK) {
-                                displayValue = (displayValue / 1000).toFixed(0) + 'K';
-                            }
-                            
-                            counter.textContent = displayValue + (isPlus ? '+' : '');
-                        }, 20);
-                        
-                        observer.unobserve(counter);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            counters.forEach(counter => observer.observe(counter));
-        }
             
         // Add loading animation
         function showLoadingAnimation() {
@@ -158,8 +75,6 @@
             handleScrollAnimations();
             handleSmoothScrolling();
             handleMouseEffects();
-            typeWriter();
-            animateCounters();
         }
         
         // Start everything when DOM is loaded
