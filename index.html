@@ -64,7 +64,7 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <img src="jose-santos.jpg" alt="Jose Santos Osorio" class="profile-image">
+            <img src="Images/jose-santos.jpg" alt="Jose Santos Osorio" class="profile-image">
             <h1>Jose Santos Osorio</h1>
             <p class="subtitle">Emprendedor Digital | Estudiante de Administración | Creador de Contenido</p>
             <p class="tagline">"No espero a que las oportunidades lleguen: LAS CREO."</p>
@@ -206,6 +206,47 @@
                 </div>
             </section>
 
+            <!-- Certifications Section (estática) -->
+            <section id="certificaciones" class="glass-card scroll-animate">
+                <h2 class="card-title">
+                    <i class="fas fa-certificate"></i>
+                    Certificaciones
+                </h2>
+                <div class="certifications-wrapper">
+                    <button class="carousel-button prev" aria-label="Anterior certificado">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="certifications-carousel">
+                        <div class="certifications-track">
+                            <div class="certification-card">
+                                <img src="Images/Certifications/cert-digital-marketing.png" alt="Certificado Marketing Digital" class="certification-img">
+                                <h3 class="certification-title">Fundamentos Marketing Digital</h3>
+                                <p class="certification-company">Google</p>
+                                <p class="certification-date">Feb. 2025</p>
+                            </div>
+                            <div class="certification-card">
+                                <img src="Images/Certifications/cert-digital-literacy.png" alt="Certificado Alfabetización Digital" class="certification-img">
+                                <h3 class="certification-title">IC3 Alfabetización Digital</h3>
+                                <p class="certification-company">Certiport</p>
+                                <p class="certification-date">Jun. 2023</p>
+                            </div>
+                            <div class="certification-card">
+                                <img src="Images/Certifications/cert-english-business.png" alt="Certificado Inglés de Negocios" class="certification-img">
+                                <h3 class="certification-title">English for Business and Entrepreneurship</h3>
+                                <p class="certification-company">Online Professional English Network</p>
+                                <p class="certification-date">Jun. 2025</p>
+                            </div>
+                            <!-- Puedes añadir más certificados aquí -->
+                        </div>
+                    </div>
+
+                    <button class="carousel-button next" aria-label="Siguiente certificado">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
             <!-- Contact Section -->
             <section id="contacto" class="glass-card scroll-animate">
                 <h2 class="card-title">
@@ -269,13 +310,19 @@
         </main>
     </div>
 
-    <!-- Conexión con el archivo javascript de particulas y animaciones -->
-    <script src="scripts.js"></script>
-
     <!-- Footer -->
     <footer class="footer">
         <small>© 2025 Jose Santos Osorio.</small>
     </footer>
+
+    <!-- Modal para visualizar certificados -->
+    <div id="certificateModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="certificateModalImg">
+    </div>
+
+    <!-- Conexión con el archivo javascript de particulas y animaciones -->
+    <script src="scripts.js"></script>
 </body>
 
 </html>
