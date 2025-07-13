@@ -216,7 +216,6 @@
             border: 4px solid white;
             box-shadow: var(--shadow-lg);
             margin-bottom: 1.5rem;
-            transition: all 0.4s ease;
         }
          
         .header h1 {
@@ -262,7 +261,7 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -288,7 +287,7 @@
             transform: scale(1.2);
         }
         
-        .social-link.x { background: #000000 !important; }
+        .social-link.x { background: #000000; }
         .social-link.x i.fa-twitter { color: #fff; }
         .social-link.linkedin { background: #0077b5; }
         .social-link.instagram { background: var(--gradient-2); }
@@ -310,7 +309,6 @@
             padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: var(--shadow);
-            transition: all 0.4s ease;
             animation: fadeInUp 1s ease-out both;
             width: 100%;
             max-width: 100%;
@@ -333,6 +331,7 @@
             font-size: 1.8rem;
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
@@ -362,7 +361,7 @@
             padding: 1rem;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
         
         .stat-item:hover {
@@ -397,7 +396,7 @@
             border-radius: 15px;
             padding: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.4s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         
         .project-card:hover {
@@ -439,7 +438,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         
         .project-link:hover {
@@ -461,7 +460,7 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             cursor: default;
         }
@@ -485,7 +484,7 @@
             padding: 1rem;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 12px;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
         
         .contact-item:hover {
@@ -528,7 +527,7 @@
         
         /* CTA Button */
         .cta-button {
-            display: inline-flex;
+            display: block;
             align-items: center;
             gap: 0.5rem;
             background: var(--gradient-1);
@@ -538,12 +537,11 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.4s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             border: none;
             cursor: pointer;
             box-shadow: var(--shadow);
             margin: 2rem auto;
-            display: block;
             width: fit-content;
         }
         
@@ -587,18 +585,6 @@
             40%, 43% { transform: translate3d(0, -30px, 0); }
             70% { transform: translate3d(0, -15px, 0); }
             90% { transform: translate3d(0, -4px, 0); }
-        }
-        
-        /* Scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         /* Responsive */
@@ -723,6 +709,8 @@
             background: #fff;
             padding: 0.5rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
         .certification-title {
@@ -794,11 +782,6 @@
             color: #fff;
             background: rgba(255, 255, 255, 0.2);
         }
-
-        .certification-img {
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
         
         .certification-img:hover {
             transform: scale(1.02);
@@ -851,7 +834,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
             flex-shrink: 0;
             opacity: 0.7;
             z-index: 2;
