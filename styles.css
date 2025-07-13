@@ -318,12 +318,6 @@
             overflow: hidden;
         }
         
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.4);
-        }
-        
         .card-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
