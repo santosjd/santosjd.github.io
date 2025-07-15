@@ -1,7 +1,7 @@
 // JavaScript
         // Mouse move effect for cards
         function handleMouseEffects() {
-            const cards = document.querySelectorAll('.glass-card, .project-card');
+            const cards = document.querySelectorAll('.project-card');
             
             cards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -35,39 +35,6 @@
         } else {
             init();
         }
-        
-        // Performance optimization
-        let ticking = false;
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateAnimations);
-                ticking = true;
-            }
-        }
-        
-        function updateAnimations() {
-            // Update any continuous animations here
-            ticking = false;
-        }
-        
-        // Intersection Observer for performance
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        
-        // Add error handling
-        window.addEventListener('error', (e) => {
-            console.log('Error handled gracefully:', e.message);
-        });
-        
-        // Service Worker registration (for future PWA features)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Future service worker registration
-            });
-        }
 
         // Mobile Main Header Menu
         const menuBtn = document.querySelector('.main-header__menu-btn');
@@ -78,14 +45,14 @@
             mobileMenu.classList.toggle('open');
         });
 
-        // Cierra el menú al hacer click en un enlace
+        // Close mobile menu when a link is clicked
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
             });
         });
 
-        // Opcional: Cierra el menú al hacer click fuera del menú
+        // Close the menu when clicking outside of it
         document.addEventListener('click', (e) => {
             if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
                 mobileMenu.classList.remove('open');
