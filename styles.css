@@ -154,7 +154,7 @@ body {
 
 /* Mobile Menu (Hidden by default) */
 .main-header__mobile-menu {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
@@ -167,12 +167,17 @@ body {
     flex-direction: column;
     gap: 2rem;
     z-index: 2000;
-    transition: transform 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     transform: translateX(100%);
 }
 
 .main-header__mobile-menu.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
     transform: translateX(0);
 }
 
@@ -562,7 +567,7 @@ body {
 
 .certification-img {
     width: 100%;
-    aspect-ratio: calc(1188 / 921);
+    aspect-ratio: 1188 / 921;
     object-fit: contain;
     border-radius: 12px;
     margin-bottom: 1rem;
@@ -621,6 +626,9 @@ body {
 }
 
 .modal-close {
+    border: none;
+    padding: 0;
+    font: inherit;
     position: absolute;
     right: 35px;
     top: 25px;

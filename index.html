@@ -53,7 +53,6 @@
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png" />
     <link rel="canonical" href="https://santosjd.github.io/" />
 
     <!-- Google Fonts -->
@@ -73,7 +72,7 @@
     <!-- Schema.org markup - Person -->
     <script type="application/ld+json">
     {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "Person",
         "gender": "male",
         "@id": "https://santosjd.github.io/#person",
@@ -93,8 +92,7 @@
         "url": "https://santosjd.github.io/",
         "sameAs": [
             "https://linkedin.com/in/jose-santos-osorio",
-            "https://x.com/joseitosantos",
-            
+            "https://x.com/joseitosantos"
         ],
         "alumniOf": {
             "@type": "CollegeOrUniversity",
@@ -106,9 +104,9 @@
             "Emprendimiento",
             "YouTube Strategy",
             "SEO",
-            "Tecnología"
-            "Edición de Video"
-            "Manejo de Computadoras",
+            "Tecnología",
+            "Edición de Video",
+            "Manejo de Computadoras"
         ]
     }
     </script>
@@ -116,17 +114,14 @@
     <!-- Schema.org markup - WebSite -->
     <script type="application/ld+json">
     {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Portfolio de Jose Santos Osorio",
         "url": "https://santosjd.github.io/",
+        "logo": "https://santosjd.github.io/Images/jose-santos.webp",
         "author": {
             "@type": "Person",
-            "@id": "https://santosjd.github.io/#person",
-            "Logo": {
-                "@type": "ImageObject",
-                "url": "https://santosjd.github.io/Images/jose-santos.webp"
-            }
+            "@id": "https://santosjd.github.io/#person"
         },
         "description": "Portfolio profesional de Jose Santos Osorio, emprendedor digital y creador de contenido ecuatoriano",
         "keywords": "Jose Santos, Emprendedor Digital, Estudiante de Administración, Creador de Contenido, Marketing Digital, Portfolio",
@@ -141,12 +136,6 @@
 </head>
 
 <body>
-<!-- Vercel Analytics Script -->
-<script defer src="/_vercel/insights/script.js"></script>
-    
-<!-- Vercel Speed Insights Script -->
-<script defer src="/_vercel/speed-insights/script.js"></script>
-
     <!-- Main Header -->
     <header class="main-header">
         <div class="main-header__container">
@@ -156,11 +145,12 @@
                 <a href="#proyectos" class="main-header__link">Proyectos</a>
                 <a href="#contacto" class="main-header__link">Contacto</a>
             </nav>
-            <button class="main-header__menu-btn" aria-label="Abrir menú">
+            <button class="main-header__menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="mobile-menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <div class="main-header__mobile-menu">
+        <div id="mobile-menu" class="main-header__mobile-menu">
             <a href="#sobre-mi" class="main-header__mobile-link">Sobre mí</a>
             <a href="#proyectos" class="main-header__mobile-link">Proyectos</a>
             <a href="#contacto" class="main-header__mobile-link">Contacto</a>
@@ -247,9 +237,9 @@
                             al desarrollo de mi país</strong>.
                     </p>
                 </div>
-                <a href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jose-santos-osorio"
+                <a href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&amp;followMember=jose-santos-osorio"
                     class="cta-button">
-                    Conectémos en LinkedIn
+                    Conectemos en LinkedIn
                 </a>
             </section>
 
@@ -257,7 +247,7 @@
             <section class="glass-card">
                 <h2 class="card-title">
                     <i class="fas fa-rocket"></i>
-                    Habilidades & Herramientas
+                    Habilidades &amp; Herramientas
                 </h2>
                 <div class="skills">
                     <span class="skill-tag">Emprendimiento y Creación de Contenido</span>
@@ -354,28 +344,28 @@
                         <div class="certifications-track">
                             <div class="certification-card">
                                 <img src="Images/Certifications/cert-english-business.webp"
-                                    alt="Certificado Inglés de Negocios" class="certification-img" loading="lazy">
+                                            alt="Certificado Inglés de Negocios" class="certification-img" width="1188" height="921" loading="lazy" tabindex="0" role="button">
                                 <h3 class="certification-title">English for Business and Entrepreneurship</h3>
                                 <p class="certification-company">Online Professional English Network</p>
                                 <p class="certification-date">Jun. 2025</p>
                             </div>
                             <div class="certification-card">
                                 <img src="Images/Certifications/cert-digital-marketing.webp"
-                                    alt="Certificado Marketing Digital" class="certification-img" loading="lazy">
+                                    alt="Certificado Marketing Digital" class="certification-img" width="1188" height="921" loading="lazy" tabindex="0" role="button">
                                 <h3 class="certification-title">Fundamentos Marketing Digital</h3>
                                 <p class="certification-company">Google</p>
                                 <p class="certification-date">Feb. 2025</p>
                             </div>
                             <div class="certification-card">
                                 <img src="Images/Certifications/cert-ai.webp" alt="Certificado Inteligencia Artificial"
-                                    class="certification-img" loading="lazy">
+                                    class="certification-img" width="1188" height="921" loading="lazy" tabindex="0" role="button">
                                 <h3 class="certification-title">Inteligencia Artificial para todos</h3>
                                 <p class="certification-company">DeepLearning.AI</p>
                                 <p class="certification-date">Oct. 2024</p>
                             </div>
                             <div class="certification-card">
                                 <img src="Images/Certifications/cert-digital-literacy.webp"
-                                    alt="Certificado Alfabetización Digital" class="certification-img" loading="lazy">
+                                    alt="Certificado Alfabetización Digital" class="certification-img" width="1188" height="921" loading="lazy" tabindex="0" role="button">
                                 <h3 class="certification-title">IC3 Alfabetización Digital</h3>
                                 <p class="certification-company">Certiport</p>
                                 <p class="certification-date">Jun. 2023</p>
@@ -445,7 +435,7 @@
                     </div>
                 </div>
 
-                <a href="mailto:jdsosantos@outlook.com?subject=Oportunidad%20Laboral&body=Hola%20Jose,%20me%20interesa%20conocer%20más%20sobre%20tu%20perfil..."
+                    <a href="mailto:jdsosantos@outlook.com?subject=Oportunidad%20Laboral&amp;body=Hola%20Jose,%20me%20interesa%20conocer%20más%20sobre%20tu%20perfil..."
                     class="cta-button">
                     <i class="fas fa-rocket"></i>
                     ¡Contáctame Ya!
@@ -460,9 +450,9 @@
     </footer>
 
     <!-- Modal para visualizar certificados -->
-    <div id="certificateModal" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="certificateModalImg">
+    <div id="certificateModal" class="modal" role="dialog" aria-modal="true" aria-label="Certificado ampliado">
+        <button type="button" class="modal-close" aria-label="Cerrar certificado">&times;</button>
+        <img class="modal-content" id="certificateModalImg" alt="Certificado ampliado">
     </div>
 
     <!-- Conexión con el archivo javascript -->

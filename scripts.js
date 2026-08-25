@@ -41,69 +41,84 @@
         const mobileMenu = document.querySelector('.main-header__mobile-menu');
         const mobileLinks = document.querySelectorAll('.main-header__mobile-link');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
 
         // Close mobile menu when a link is clicked
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-            });
-        });
-
-        // Close the menu when clicking outside of it
-        document.addEventListener('click', (e) => {
-            if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                mobileMenu.classList.remove('open');
-            }
-        });
-
         // Modal de certificados
         const modal = document.getElementById('certificateModal');
         const modalImg = document.getElementById('certificateModalImg');
         const closeBtn = document.getElementsByClassName('modal-close')[0];
         const certificationImages = document.querySelectorAll('.certification-img');
 
-        // Abrir modal al hacer clic en una imagen
-        certificationImages.forEach(img => {
-            img.onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                document.body.style.overflow = 'hidden'; // Previene el scroll del body
+        if (modal && modalImg && closeBtn) {
+            certificationImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImg.src = img.src;
+                    document.body.style.overflow = 'hidden';
+                });
+
+                img.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', event => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                modalImg.src = '';
+                document.body.style.overflow = '';
             }
-        });
-
-        // Cerrar modal al hacer clic en la X
-        closeBtn.onclick = function() {
-            closeModal();
-        }
-
-        // Cerrar modal al hacer clic fuera de la imagen
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Cerrar modal con la tecla Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                closeModal();
-            }
-        });
-
-        function closeModal() {
-            modal.style.display = "none";
-            document.body.style.overflow = 'auto'; // Restaura el scroll del body
         }
 
         // Carrusel de certificaciones
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.certifications-track');
+            if (!track) {
+                return;
+            }
+
             const cards = track.querySelectorAll('.certification-card');
             const prevButton = document.querySelector('.carousel-button.prev');
             const nextButton = document.querySelector('.carousel-button.next');
+
+            if (!cards.length || !prevButton || !nextButton) {
+                return;
+            }
             
             let currentIndex = 0;
             let cardsPerView;
@@ -121,7 +136,8 @@
                     cardsPerView = 1;
                 }
                 
-                // Actualizar estado de los botones
+                currentIndex = Math.min(currentIndex, Math.max(0, cards.length - cardsPerView));
+                applyCarouselPosition();
                 updateButtonsState();
             }
 
@@ -133,7 +149,7 @@
 
             // Función para mover el carrusel
             function moveCarousel(direction) {
-                const maxIndex = cards.length - cardsPerView;
+                const maxIndex = Math.max(0, cards.length - cardsPerView);
                 
                 if (direction === 'prev' && currentIndex > 0) {
                     currentIndex--;
@@ -141,14 +157,17 @@
                     currentIndex++;
                 }
                 
-                // Calcular el ancho total de una tarjeta (incluyendo gap)
+                applyCarouselPosition();
+                updateButtonsState();
+            }
+
+            function applyCarouselPosition() {
                 const cardWidth = track.querySelector('.certification-card').offsetWidth;
                 const gapWidth = 24; // 1.5rem = 24px
                 const moveAmount = cardWidth + gapWidth;
                 
                 const offset = -currentIndex * moveAmount;
                 track.style.transform = `translateX(${offset}px)`;
-                updateButtonsState();
             }
 
             // Event listeners

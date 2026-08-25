@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://josesantos.click/sitemap.xml
+Sitemap: https://santosjd.github.io/sitemap.xml
