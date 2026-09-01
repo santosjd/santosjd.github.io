@@ -36,6 +36,44 @@
             init();
         }
 
+        // Theme toggle
+        const html = document.documentElement;
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            const isDark = theme === 'dark';
+            const themeColor = document.querySelector('meta[name="theme-color"]');
+
+            if (themeIcon) {
+                themeIcon.classList.toggle('fa-sun', !isDark);
+                themeIcon.classList.toggle('fa-moon', isDark);
+            }
+
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+            }
+
+            if (themeColor) {
+                themeColor.setAttribute('content', isDark ? '#000000' : '#F5F5F7');
+            }
+
+            localStorage.setItem('theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+        applyTheme(initialTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(currentTheme);
+            });
+        }
+
         // Mobile Main Header Menu
         const menuBtn = document.querySelector('.main-header__menu-btn');
         const mobileMenu = document.querySelector('.main-header__mobile-menu');
@@ -73,7 +111,9 @@
             certificationImages.forEach(img => {
                 img.addEventListener('click', () => {
                     modal.style.display = 'block';
+                    modal.setAttribute('aria-hidden', 'false');
                     modalImg.src = img.src;
+                    modalImg.alt = img.alt;
                     document.body.style.overflow = 'hidden';
                 });
 
@@ -100,7 +140,9 @@
 
             function closeModal() {
                 modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
                 modalImg.src = '';
+                modalImg.alt = '';
                 document.body.style.overflow = '';
             }
         }
